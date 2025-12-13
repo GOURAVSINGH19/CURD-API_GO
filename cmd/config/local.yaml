@@ -1,4 +1,0 @@
-env: "dev"
-stoarge_path: "stoarge/stoarge.db"
-http_server:
-  address: "localhost:8082"
