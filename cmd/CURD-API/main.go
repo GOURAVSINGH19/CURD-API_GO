@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"log/slog"
 	"net/http"
@@ -12,6 +11,7 @@ import (
 	"time"
 
 	"github.com/gouravsingh19/CURD-API/internal/config"
+	"github.com/gouravsingh19/CURD-API/internal/http/handlers/student"
 )
 
 func main() {
@@ -21,9 +21,7 @@ func main() {
 	//setup router
 	router := http.NewServeMux()
 
-	router.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Welcome to CURD-API server! Environment:"))
-	})
+	router.HandleFunc("GET /api/students", student.New())
 
 	//setup server
 	srv := http.Server{
